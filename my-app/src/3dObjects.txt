@@ -1,0 +1,135 @@
+import { Component, OnInit, ElementRef, NgZone } from '@angular/core';
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+@Component({
+  selector: 'app-welcome',
+  templateUrl: './welcome.component.html',
+  styleUrls: ['./welcome.component.css']
+})
+export class WelcomeComponent implements OnInit {
+
+  constructor(private ngZone: NgZone) {}
+
+  scene: THREE.Scene = new THREE.Scene();
+  camera: THREE.PerspectiveCamera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  renderer: THREE.WebGLRenderer = new THREE.WebGLRenderer();
+  loader: GLTFLoader = new GLTFLoader();
+  modelo1: any = null;
+  modelo2: any = null;
+
+  ngOnInit() {
+    this.modelo3D()
+  }
+
+  modelo3D() {
+    // Escena
+    this.scene.background = new THREE.Color(0xebd3eb);
+
+    // Agregar luz ambiental
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+    this.scene.add(ambientLight);
+
+    // Agregar luz direccional
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(1, 1, 1).normalize();
+    this.scene.add(directionalLight);
+
+    // Camara
+    this.camera.position.set(0, 0, 20);
+    this.camera.lookAt(0, 0, 0);
+
+    // Renderizado
+    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    const container = document.querySelector('.canvas') as HTMLElement;
+    container.appendChild(this.renderer.domElement);
+
+
+    /* Cargar modelo 1 */
+    this.loader.load('../../../assets/Basic Spaceship.glb', (gltf) => {
+      gltf.scene.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.material.color.multiplyScalar(1.5);
+        }
+      });
+      gltf.scene.position.set(19, 19, 0);
+      gltf.scene.rotation.set(0.6, 1.3, 1.6);
+      
+      this.scene.add(gltf.scene);
+      this.modelo1 = gltf.scene;
+    }, undefined, (error) => {
+      console.error(error);
+    });
+
+    /* Cargar modelo 2 */
+    this.loader.load('../../../assets/Planet.glb', (gltf) => {
+      gltf.scene.traverse((child) => {
+        if (child instanceof THREE.Mesh) {
+          child.material.color.multiplyScalar(1.5);
+        }
+      });
+      gltf.scene.position.set(-20, 15, 0);
+      gltf.scene.rotation.set(0, 0, 0);
+      this.scene.add(gltf.scene);
+      this.modelo2 = gltf.scene;
+    }, undefined, (error) => {
+      console.error(error);
+    });
+
+    let increasing = true; 
+    const scaleFactor = 0.0002;
+
+    // Animaciónes
+    this.ngZone.runOutsideAngular(() => {
+      const animate = () => {
+        requestAnimationFrame(animate);
+
+        // Modelo 1
+        this.modelo1.position.y -= 0.02;
+        this.modelo1.position.x -= 0.02;
+        this.modelo1.rotation.z += 0.003;
+
+        // Modelo 2
+        this.modelo2.position.x += 0.01;
+        this.modelo2.position.y += -0.01;
+        this.modelo2.rotation.x += 0.005;
+        this.modelo2.rotation.y += 0.005;
+        console.log(this.modelo1.scale);
+        
+        if (increasing) {
+          this.modelo2.scale.multiplyScalar(1 + scaleFactor);
+        } else {
+          this.modelo2.scale.multiplyScalar(1 - scaleFactor);
+        }
+        if (this.modelo2.scale.x > 1.5 || this.modelo2.scale.x < 0.5) {
+          increasing = !increasing;
+        }
+        
+        this.renderer.render(this.scene, this.camera);
+      };
+      animate();
+    });
+  
+  
+  }
+
+  
+}
+
+<div class="welcome vistaPrincipal">
+    <div class="nav-bar">
+        <h2 class="vistaPrincipal">IGNACIO VILLARREAL</h2>
+    </div>
+    <div class="title">
+        <h1 class="vistaPrincipal">Welcome to my page.</h1>
+    </div>
+    <div class="message">
+        <p class="vistaPrincipal">Ignacio Villarreal es un futuro ingeniero informatico, apacionado en lo que hace y con ancias de nuevas experiencias.</p>
+    </div>
+    <div class="go">
+        <button class="button vistaPrincipal">Empecemos</button>
+    </div>
+    <div class="canvas"></div>
+</div>
+
+

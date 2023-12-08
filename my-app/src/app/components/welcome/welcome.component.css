@@ -2,13 +2,16 @@
     background-color: #ebd3eb;
     width: 100%;
     min-height: 100vh;
+    position: relative;
 }
 
 .welcome .nav-bar {
     padding: 20px;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
-    text-align: center;
 }
 
 .welcome .nav-bar h2 {
@@ -70,7 +73,6 @@
     cursor: pointer;
     position: relative;
     border: none;
-    z-index: 1;
     transition: all 1s ease;
     overflow: hidden;
 }
@@ -127,3 +129,8 @@
     }
 
 }
+
+.vistaPrincipal{
+    z-index: 2;
+}
+

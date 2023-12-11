@@ -1,0 +1,151 @@
+.sobreMi{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 100px 0;
+    flex-direction: column;
+}
+
+.sobreMi .datos{
+    font-family: "Untitled Sans";
+    padding: 20px;
+    margin-left: 100px;
+    margin-bottom: 150px;
+}
+
+.sobreMi .datos .cuenta p{
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+.sobreMi .datos .cuenta h2{
+    font-size: 8rem;
+    font-weight: 500;
+    letter-spacing: -.5rem
+}
+
+.porque{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.porque .pregunta{
+    font-size: 32px;
+    width: 400px;
+}
+
+.porque .respuesta{
+    width: 700px;
+}
+
+.porque .respuesta p{
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.quienSoy{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 100px 0;
+}
+
+.quienSoy h2{
+    font-size: 32px;
+}
+
+.quienSoy p{
+    margin-top: 20px;
+    font-size: 22px;
+    width: 1000px;
+}
+
+.valores{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.valores .forma1{
+    background-color: black;
+    width: 1000px;
+    height: 8px;
+    margin: 10px;
+}
+
+.valores .forma2{
+    background-color: black;
+    width: 700px;
+    height: 4px;
+    margin: 30px 0;
+}
+
+.valores h2{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.valores ul{
+    list-style: none;
+    width: 450px;
+}
+
+.valores ul li{
+    font-size: 25px;
+}
+
+.otrasCosas{
+    margin: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.otrasCosas h2{
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.otrasCosas .cosas{
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, 400px);
+    gap: 30px;
+}
+
+.otrasCosas .cosas .col{
+    width: 400px;
+    height: 400px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.otrasCosas .cosas .col h3{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.otrasCosas .cosas .col img{
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+.otrasCosas .cosas .col p{
+    font-size: 20px;
+}

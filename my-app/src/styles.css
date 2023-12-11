@@ -5,6 +5,24 @@
     padding: 0;
 }
 
+:root{
+    --color1: #3f3f42;
+    --color2: #d7d7d9;
+    --color3: #d7d7d9;
+    --background: #141414;
+    --color4: #141414;
+    --color5: #5c5650;
+    --color6: #777;
+    --color7: #d54961;
+    --color8: rgba(85, 180, 97, .97);
+    --color9: #8e8e93;
+    --color10: #83d05f;
+    --color11: #003767;
+    --color12: #8a1de9;
+    --color13: #02a7ad;
+    
+}
+
 canvas{
     position: fixed;
     top: 0;
@@ -12,4 +30,8 @@ canvas{
     width: 100%;
     height: 100%;
     z-index: 0;
+}
+
+.noScroll{
+    overflow: hidden;
 }

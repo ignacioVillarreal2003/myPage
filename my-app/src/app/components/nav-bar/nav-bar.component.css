@@ -112,8 +112,27 @@
     color: rgba(85, 180, 97, .97);
 }
 
+@media (max-width: 550px){
+    .nav .hamburger-active ul li a {
+        font-size: 70px;
+        font-weight: 600;
+    }
+    
+    .nav .hamburger-active ul li a:hover {
+        font-size: 90px;
+    }
+}
 
-
+@media (min-width: 551px) and (max-width: 800px){
+    .nav .hamburger-active ul li a {
+        font-size: 90px;
+        font-weight: 600;
+    }
+    
+    .nav .hamburger-active ul li a:hover {
+        font-size: 120px;
+    }
+}
 
 
 

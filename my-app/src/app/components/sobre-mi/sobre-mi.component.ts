@@ -9,7 +9,7 @@ export class SobreMiComponent {
 
   contadorDatos: number = 0;
   datos = ['le encanta programar.', 'es muy organizado y ordenado.', 'le encanta viajar.',];
-  dato: string = "le encanta programar.";
+  dato: string = "le encanta viajar.";
 
   ngOnInit(){
     setInterval(() => this.cambiarFrase(), 3000);

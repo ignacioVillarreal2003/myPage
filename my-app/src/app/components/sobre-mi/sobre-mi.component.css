@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+@import url('https://fonts.googleapis.com/css2?familia=Alicia&display=intercambio');
+
 .sobreMi{
     display: flex;
     align-items: flex-start;
@@ -24,20 +27,42 @@
     letter-spacing: -.5rem
 }
 
+.sobreMi .datos .enfasis0{
+    color: #02a7ad;
+}
+
+@media (max-width: 780px){
+    .sobreMi .datos{
+        margin-left: 20px;
+    }
+
+    .sobreMi .datos .cuenta h2{
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: 0
+    }
+}
+
 .porque{
+    font-family: 'Alice', serif;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .porque .pregunta{
     font-size: 32px;
-    width: 400px;
+    max-width: 400px;
+    padding: 25px;
+    box-sizing: border-box;
 }
 
 .porque .respuesta{
-    width: 700px;
+    max-width: 700px;
+    padding: 25px;
+    box-sizing: border-box;
 }
 
 .porque .respuesta p{
@@ -46,6 +71,7 @@
 }
 
 .quienSoy{
+    font-family: 'Sono', monoespaciado;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,10 +87,30 @@
 .quienSoy p{
     margin-top: 20px;
     font-size: 22px;
-    width: 1000px;
+    max-width: 1000px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
+.quienSoy .enfasis1{
+    color: #4299e1;
+}
+
+.quienSoy .enfasis2{
+    color: #ED8936;
+}
+
+.quienSoy .enfasis3{
+    color: #f56565;
+}
+
+.quienSoy .enfasis4{
+    color: #63b3ed;
+}
+
+
 .valores{
+    font-family: 'Alice', serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,34 +119,61 @@
 }
 
 .valores .forma1{
-    background-color: black;
-    width: 1000px;
+    background-color: rgba(85, 180, 98, 0.63);
+    width: 80%;
     height: 8px;
     margin: 10px;
+    transition: all 1s ease-in-out;
+}
+
+.valores:hover .forma1{
+    width: 60%;
+    background-color: rgb(85, 180, 98);
 }
 
 .valores .forma2{
-    background-color: black;
-    width: 700px;
+    background-color: #83d05f;
+    width: 70%;
     height: 4px;
     margin: 30px 0;
+    transition: all 1s ease-in-out;
+}
+
+.valores:hover .forma2{
+    width: 50%;
+    background-color: #83d05f81;
 }
 
 .valores h2{
     font-size: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    color: #3f3f42;
+    text-align: center;
 }
 
 .valores ul{
     list-style: none;
     width: 450px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .valores ul li{
     font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.valores ul li p{
+    color: #777;
+    transition: all 1s ease-in-out;
+}
+
+.valores:hover ul li p{
+    color: #474747;
 }
 
 .otrasCosas{
+    font-family: 'Alice', serif;
     margin: 100px 0;
     display: flex;
     align-items: center;
@@ -110,8 +183,17 @@
 }
 
 .otrasCosas h2{
+    text-align: center;
     font-size: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
+    padding: 10px;
+    transition: all .5s ease-out;
+}
+
+.otrasCosas:hover h2{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
 }
 
 .otrasCosas .cosas{
@@ -134,6 +216,15 @@
     padding: 20px;
     box-sizing: border-box;
     border-radius: 10px;
+    transition: all .350s ease-in-out;
+}
+
+.otrasCosas .cosas .col:hover{
+    transform: scale(1.1);
+}
+
+.otrasCosas .cosas .col:hover img{
+    transform: scale(1.05);
 }
 
 .otrasCosas .cosas .col h3{
@@ -144,8 +235,25 @@
 .otrasCosas .cosas .col img{
     width: 200px;
     margin-bottom: 20px;
+    transition: all .350s ease-in-out;
 }
 
 .otrasCosas .cosas .col p{
     font-size: 20px;
+}
+
+.otrasCosas .cosas .comida:hover{
+    background-color: #02a7ad;
+}
+
+.otrasCosas .cosas .musica:hover{
+    background-color: #a25be0;
+}
+
+.otrasCosas .cosas .viajes:hover{
+    background-color: #83d05f;
+}
+
+.otrasCosas .cosas .ejercicio:hover{
+    background-color: #eb6b80;
 }

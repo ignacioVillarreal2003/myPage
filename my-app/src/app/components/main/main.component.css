@@ -9,44 +9,46 @@
     justify-content: center;
     margin-top: 80px;
     gap: 30px;
-    flex-wrap: wrap;
     margin-bottom: 80px;
+    flex-direction: column;
 }
 
-.cont-presentacion .presentation1 {
+.cont-presentacion .presentation1{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 450px;
-    height: 450px;
-    margin-bottom: 40px;
+    background-color: #c2c2c2;
+    width: 100%;
+    height: 70vh;
+    margin-bottom: 100px;
+    position: relative;
 }
 
-.cont-presentacion .presentation1 h1 {
-    color: black;
-    transition: all .350s ease-in-out;
+video {
+    position: absolute;
+    min-width: 100%;
+    height: 100%;
+    background-color: black;
 }
 
-.cont-presentacion .presentation1 .imagen {
-    width: 400px;
-    height: 350px;
-    margin-bottom: 20px;
+
+.cont-presentacion .presentation1 p{
+    font-size: calc(0.65rem + 1.4vw);
+    z-index: 1;
+    color: #fff;
+    text-align: center;
 }
 
-.cont-presentacion .presentation1 img {
-    width: 350px;
-    height: 350px;
-    transition: all .350s ease-in-out;
+.cont-presentacion .presentation1 h2{
+    font-size: calc(0.65rem + 2.6vw);
+    margin: 40px 0;
+    z-index: 1;
+    color: #fff;
+    text-align: center;
 }
 
-.cont-presentacion .presentation1:hover h1 {
-    transform: scale(1.1);
-}
 
-.cont-presentacion .presentation1:hover img {
-    transform: scale(0.96);
-}
 
 .cont-presentacion .presentation2 {
     font-family: Work Sans, sans-serif;
@@ -67,6 +69,10 @@
 
 .cont-presentacion .enfasis1 {
     color: #02a7ad;
+}
+
+.cont-presentacion .enfasis3 {
+    color: #d54961;
 }
 
 .cont-presentacion .presentation2 p {
@@ -273,7 +279,7 @@
     margin: 0;
     font-size: 6vw;
     color: rgba(225, 225, 225, .01);
-    background-image: url("https://images.unsplash.com/photo-1499195333224-3ce974eecb47?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2cf549433129d4227d1879347b9e78ce&auto=format&fit=crop&w=1248&q=80");
+    background-image: url("../../../assets/colorful-2609978_1920.jpg");
     background-repeat: repeat;
     -webkit-background-clip: text;
     animation: animate 15s ease-in-out infinite;

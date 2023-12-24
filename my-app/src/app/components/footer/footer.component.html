@@ -4,11 +4,23 @@
         <p>Siempre estoy dispuesto a charlar ☕</p>
     </div>
     <div class="contact">
-        <a href="github"><img src="../../../assets/github.png" alt=""></a>
-        <a href="linkedin"><img src="../../../assets/linkedin.png" alt=""></a>
-        <a href="gmail"><img src="../../../assets/gmail.png" alt=""></a>
+        <a href="github"><img src="../../../assets/github.png" alt="https://github.com/ignacioVillarreal2003"></a>
+        <a href="linkedin"><img src="../../../assets/linkedin.png"
+                alt="https://www.linkedin.com/in/ignacio-villarreal-518804267/"></a>
+        <button class="link" href="gmail" (click)="openMail()"><img src="../../../assets/gmail.png" alt=""></button>
     </div>
     <div class="messageFinal2">
         <h2>ignacio villarreal • 2023</h2>
     </div>
 </footer>
+
+<div class="mail">
+    <div class="cont">
+        <h1>Enviar email</h1>
+        <button (click)="cancelMail()" class="cancel">X</button>
+        <input class="asunto" type="text" placeholder="asunto" [(ngModel)]="asunto">
+        <label class="cuerpo" for="miAreaTexto">Ingrese el mensaje:</label>
+        <textarea class="cuerpoArea" id="miAreaTexto" name="miAreaTexto" rows="4" cols="50" [(ngModel)]="cuerpo"></textarea>
+        <button class="enviar" (click)="sendEmail()">Enviar mail</button>
+    </div>
+</div>

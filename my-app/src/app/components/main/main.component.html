@@ -1,6 +1,41 @@
-<app-nav-bar></app-nav-bar>
 <div class="main">
-    <app-presentacion></app-presentacion>
-    <app-destacados></app-destacados>
+    <div class="cont-presentacion">
+        <div class="presentation1">
+            <div class="imagen">
+                <img src="../../../assets/yo.jpg" alt="">
+            </div>
+            <h1>Hola, soy Ignacio!</h1>
+        </div>
+        <div class="presentation2">
+            <h2>Soy un ingeniero informatico <span class="enfasis1">apacionado</span> por lo que hago</h2>
+            <p>Naci en Montevideo, Paso de la Arena, y me inicie en el mundo de la informatica cuando era pequeño,
+                investigando y <span class="enfasis2"><strong>cureoseando por internet</strong></span>. Lorem ipsum
+                dolor sit amet, consectetur adipisicing elit. Pariatur
+                accusamus velit ipsum incidunt tempora est perferendis autem modi commodi et?</p>
+            <button routerLink="/sobreMi" class="ui-btn">
+                <span>
+                    Conoceme :)
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="projects">
+        <div class="text-container">
+            <h2>Proyectos destacados.</h2>
+        </div>
+        <ul class="proyectos">
+            <li class="proyecto">
+                <a href="">
+                    <div class="descripcion">
+                        <p>01</p>
+                        <h3>Lorem ipsum dolor sit amet.</h3>
+                        <h4>Lorem, ipsum dolor.</h4>
+                    </div>
+                    <div class="imagen">
+                        <img src="../../../assets/github.png" alt="">
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
 </div>
-<app-footer></app-footer>
